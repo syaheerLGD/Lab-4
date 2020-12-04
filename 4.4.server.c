@@ -28,7 +28,7 @@ int main (int argc, char *argv[])
  //Prepare the sockaddr_in structure
  server.sin_family = AF_INET;
  server.sin_addr.s_addr = INADDR_ANY;
- server.sin_port = htons(8888);
+ server.sin_port = htons(22);
 
  //Bind
  if (bind(socket_desc, (struct sockaddr *)&server, sizeof(server)) < 0)
@@ -46,8 +46,8 @@ int main (int argc, char *argv[])
  c = sizeof(struct sockaddr_in);
  new_socket = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&c);
 
- printf("\n****Press * and then Enter to let Server talk****\n");
- printf("*****Press # to terminate the connection*****\n");
+ printf("\n****Press * , then Enter to let Server talk****\n");
+ printf("*****Press # to stop the connection*****\n");
 
  while(new_socket > 0)
  {
